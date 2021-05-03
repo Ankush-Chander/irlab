@@ -1,1 +1,1 @@
-
+from .irlab import ResultSet
