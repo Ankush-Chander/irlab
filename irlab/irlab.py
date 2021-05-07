@@ -7,6 +7,9 @@ import urlpath as urlpath
 import pyjsonviewer
 from .request_utils import send_request
 
+from joblib import Memory
+location = "./cachedir"
+memory = Memory(location, verbose=0)
 
 PathLike = typing.Union[str, pathlib.Path, urlpath.URL]
 IOPathLike = typing.Union[PathLike, typing.IO]
@@ -55,7 +58,9 @@ class ResultSet:
         :param params:
         :return:
         """
-        json_output = send_request(url=url, method=method, params=params)
+	# cache url requests on disk
+        costly_send_request = memory.cache(send_request)
+        json_output = costly_send_request(url=url, method=method, params=params)
         if not json_output:
             raise Exception(f"Invalid response from url:{url}")
 
