@@ -94,7 +94,7 @@ class ResultSet:
         str representation
         :return:
         """
-        return json.dump(self.results)
+        return json.dumps(self.results)
 
     def __repr__(self):
         """
