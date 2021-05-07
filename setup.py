@@ -19,12 +19,22 @@ VERSION = pathlib.Path(f"{PROJECT_PATH}/irlab/VERSION").read_text()
 VERSION = VERSION.strip()
 
 KEYWORDS = ["information retrieval", "evaluation", "recommendation engines", "json"]
+
+requirements = [
+    "icecream",
+    "joblib",
+    "pathlib",
+    "pyjsonviewer",
+    "requests",
+    "ujson",
+    "urlpath"
+]
 setup(
     name="irlab",
     version=VERSION,
     url="https://github.com/Ankush-Chander/irlab",
     author="Ankush Chander",
-    author_email="ankush.watchtower@gmail.com",
+    author_email="ankush@wandlore.in",
     maintainer='Ankush Chander',
     maintainer_email='ankush.watchtower@gmail.com',
     description="Information Retrieval experiments made faster.",
@@ -34,6 +44,7 @@ setup(
     license="MIT",
     keywords=", ".join(KEYWORDS),
     packages=find_packages(),
+    install_requires=requirements,
     include_package_data=True,
     py_modules=["irlab"],
     classifiers=[
