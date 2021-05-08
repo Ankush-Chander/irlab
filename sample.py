@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     new_rs.load_json("dat/new_results.json")
     ic(len(old_rs - new_rs) / len(new_rs.results))
+    # new_rs.view_data()
 
     # compare results from url file
     # old_rs = ResultSet(primary_key="doc_id", response_key=None)
