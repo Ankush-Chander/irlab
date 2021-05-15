@@ -4,15 +4,15 @@ from irlab import ResultSet
 
 if __name__ == '__main__':
     # compare results from json file
-    old_rs = ResultSet(primary_key="doc_id", response_key="")
+    old_rs = ResultSet(primary_key="doc_id", response_key=None)
 
     old_rs.load_json("dat/old_results.json")
 
-    new_rs = ResultSet(primary_key="doc_id", response_key="")
+    new_rs = ResultSet(primary_key="doc_id", response_key=None)
 
     new_rs.load_json("dat/new_results.json")
     ic(len(old_rs - new_rs) / len(new_rs.results))
-    # new_rs.view_data()
+    (old_rs-new_rs - new_rs).view_data()
 
     # compare results from url file
     # old_rs = ResultSet(primary_key="doc_id", response_key=None)

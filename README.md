@@ -1,15 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -121,11 +109,26 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-<!-- USAGE EXAMPLES 
+<!-- USAGE EXAMPLES --> 
 ## Usage
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-_For more examples, please refer to the [Documentation](https://example.com)_
--->
+```
+from irlab import ResultSet
+
+
+old_rs = ResultSet(primary_key="doc_id", response_key=None)
+old_rs.load_json("dat/old_results.json")
+
+new_rs = ResultSet(primary_key="doc_id", response_key=None)
+new_rs.load_json("dat/new_results.json")
+
+# view results not found in new result set 
+(old_rs - new_rs).view_data()
+
+# view common results
+old_rs.intersection(new_rs).view_data()
+```
+
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 
 <!-- ROADMAP -->
@@ -138,7 +141,7 @@ See the [open issues](https://github.com/Ankush-Chander/irlab/issues) for a list
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
