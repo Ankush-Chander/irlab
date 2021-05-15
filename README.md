@@ -190,4 +190,4 @@ Project Link: [https://github.com/Ankush-Chander/irlab](https://github.com/Ankus
 [license-shield]: https://img.shields.io/github/license/Ankush-Chander/irlab.svg?style=for-the-badge
 [license-url]: https://github.com/Ankush-Chander/irlab/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/Ankush-Chander
+[linkedin-url]: https://www.linkedin.com/in/ankush-chander-8248a876/
