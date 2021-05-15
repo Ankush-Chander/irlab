@@ -10,7 +10,7 @@ def send_request(url="", method="GET", params=None):
         params = ujson.loads(params)
 
     try:
-        byte_response = requests.request(url=url, method=method, data=params, timeout=60)
+        byte_response = requests.request(url=url, method=method, json=params, timeout=60)
         parsed_response = ujson.loads(byte_response.content)
         if byte_response.status_code == 200:
             return parsed_response
