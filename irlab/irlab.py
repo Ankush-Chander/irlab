@@ -18,7 +18,7 @@ IOPathLike = typing.Union[PathLike, typing.IO]
 
 
 class ResultSet:
-    def __init__(self, primary_key="doc_id", response_key=None, results=[]):
+    def __init__(self, primary_key="doc_id", response_key: list = None, results=[]):
         self.primary_key = primary_key
         self.response_key = response_key
         self.results = results
@@ -26,13 +26,23 @@ class ResultSet:
     def _fetch_results_from_response(self, json_response):
         try:
             if self.response_key:
-                return json_response[self.response_key]
+                assert isinstance(self.response_key, list)
+                for key in self.response_key:
+                    json_response = json_response[key]
+                return json_response
             else:
                 return json_response
         except KeyError as err:
             raise Exception(f"invalid response key:{self.response_key}")
         except Exception as err:
             print(traceback.format_exc())
+
+    def transform(self):
+        """
+        transform items before final usage
+        :return:
+        """
+        return [x for x in self.results]
 
     def load_json(self, path):
         """
@@ -48,6 +58,7 @@ class ResultSet:
 
         try:
             self.results = self._fetch_results_from_response(json_output)
+            self.results = self.transform(self.results)
         except Exception as err:
             print(traceback.format_exc())
             self.results = []
