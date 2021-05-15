@@ -58,7 +58,7 @@ class ResultSet:
 
         try:
             self.results = self._fetch_results_from_response(json_output)
-            self.results = self.transform(self.results)
+            self.results = self.transform()
         except Exception as err:
             print(traceback.format_exc())
             self.results = []
