@@ -161,7 +161,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@AnkushChander](https://twitter.com/AnkushChander) - ankush@wandlore.in
+Ankush Chander - [@AnkushChander](https://twitter.com/AnkushChander) - ankush@wandlore.in
 
 Project Link: [https://github.com/Ankush-Chander/irlab](https://github.com/Ankush-Chander/irlab)
 
